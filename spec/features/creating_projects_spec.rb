@@ -1,4 +1,6 @@
+
 require 'spec_helper'
+byebug
 feature 'Creating Projects' do
   scenario "can create a project" do
     visit '/'

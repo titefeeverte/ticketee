@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
    else
     # nothing, yet
    end 
+ end
  
   private
     def project_params
