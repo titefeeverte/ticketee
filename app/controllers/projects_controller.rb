@@ -16,6 +16,10 @@ class ProjectsController < ApplicationController
    end 
  end
  
+ def show
+  @project = Project.new
+ end
+
   private
     def project_params
     params.require(:project).permit(:name, :description)

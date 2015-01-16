@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--title><%= @title || "Ticketee" %></title-->
+
+<!--Reference from Show's template-->
+  <title><%= @title || "Ticketee" %></title>
+
+
   <title>
   <% if content_for?(:title) %>
     <%= yield(:title) %>
