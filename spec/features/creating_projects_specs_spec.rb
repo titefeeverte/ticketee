@@ -6,7 +6,7 @@ feature "CreatingProjects", :type => :feature do
   	
   	visit '/'
 
-    click_link 'New Project'
+  	click_link 'New Project'
 
   	fill_in 'name' , with: 'TextMate 2'
   	fill_in 'description' , with: 'A text-editor for OS X'

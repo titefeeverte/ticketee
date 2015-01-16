@@ -13,9 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150113152242) do
 
-  create_table "projects", force: true do |t|
-    t.string   "name"
-    t.string   "description"
+  create_table "projects", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "description", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
