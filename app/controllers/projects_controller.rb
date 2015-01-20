@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(params[:project])
+    @project = Project.new(params.permit[:project])
     if @project.save
       flash[:notice] = "Project has been created."
       redirect_to @project
@@ -17,14 +17,23 @@ class ProjectsController < ApplicationController
   end 
 end
 
-def show
-  @project = Project.new
-end
+#in order to solve ActiveModel::ForbiddenAttributesError in Creating_projects_specs_spec
+def update
+  if @project = Project.find(params[:id])
+    @project.update(project_params)
+    redirect_to @project
+  end
 
-private
+
+  def show
+    @project = Project.new
+  end
+
+  private
 
   def project_params
-    params.require(:project).permit(:name, :description)
+       params.require(:project).permit(:name, :description)
   end
 
 end
+end 
