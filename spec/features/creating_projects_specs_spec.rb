@@ -9,9 +9,9 @@ feature "CreatingProjects", :type => :feature do
   	click_link 'New Project'
    
 
-  	page.fill_in 'name' , with: 'TextMate 2'
+  	page.fill_in 'project[name]' , with: 'TextMate 2'
 
-  	fill_in 'description' , with: 'A text-editor for OS X'
+  	fill_in 'project[description]' , with: 'A text-editor for OS X'
   	click_button 'Create Project'
   	expect(page).to have_content('Project has been created.')
   end
