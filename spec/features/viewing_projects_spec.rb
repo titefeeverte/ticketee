@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 feature "Viewing projects"  do 
 	scenario "listing all projects" do
 		project = FactoryGirl.create(:project, name: "TextMate 2")

@@ -1,7 +1,7 @@
 class ProjectsController < ApplicationController
 
   def index
-    #define the variable  to rspec the factory in projetc_factory.rb
+    # define the variable  to rspec the factory in projetc_factory.rb
     @projects = Project.all
   end
 
