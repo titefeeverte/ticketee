@@ -11,3 +11,43 @@
  *= require_self
  *= require_tree .
  */
+
+ body {
+ 	background-color: #d0e4fe;
+ }
+ .site-footer, .page-wrap:after {
+ 	width:100%;
+ 	height:80px;
+ 	position:absolute;
+ 	bottom:0;
+ 	left:0;
+ 	background:#f0ad4e;
+ 	text-align: center;
+ 	padding-top: 60px;
+ }
+
+
+ h1 {
+ 	color: orange;
+ 	text-align: center;
+ }
+
+ h2 {
+ 	color: orange;
+ 	text-align: center;
+ }
+
+ p {
+ 	font-family: "Times New Roman";
+ 	font-size: 20px;
+ }
+
+ li{
+ 	list-style: none;
+ 	display: inline-block;
+ 	padding: 50px;
+ }
+ a {
+ 	font-size: 18px;
+ 	text-decoration: none;
+ }

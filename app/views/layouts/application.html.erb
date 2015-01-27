@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-  <!--Reference from Show's template-->
+<%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+<%= csrf_meta_tags %>
+   <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+    </script>
+    <![endif]-->
+     
+<!--Reference from Show's template-->
   <title><%= @title || "Get Ticketee" %></title>
-
 
   <title>
     <% if content_for?(:title) %>
@@ -13,33 +19,26 @@
     Get your Ticketee !
     <% end %>
   </title>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-     <!--[if lt IE 9]>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
-      </script>
-      <![endif]-->
-    </head>
-    <body>
-      <!--include an navigation-->
-      <header class="navbar navbar-fixed-top navbar-inverse">
+  </head>
+  <body>
+    <!--include an navigation-->
+    <header class="navbar navbar-fixed-top navbar-inverse">
 
-        <div class="container">
-          
-          <!--flash message -->
-          <% flash.each do |key, value| %>
-          <div class='flash' id='<%= key %>'>
-            <%= value %>
-          </div>
-          <% end %>
+    </header>
 
-        </div>
-      </header>
+    <div class="container">
 
-      <div class="container">
         <%= yield %>
+
+        <!--flash message -->
+        <% flash.each do |key, value| %>
+        <div class='flash' id='<%= key %>'>
+          <%= value %>
+        </div>
+        <% end %>
+
       </div>
 
-    </body>
-    </html>
+  <footer class="site-footer" >Spade Christelle janvier 2015</footer>
+  </body>
+  </html>

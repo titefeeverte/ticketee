@@ -1,5 +1,5 @@
 
-#Create factories
+# Create factories
 FactoryGirl.define  do 
 	factory :project do
 		name "Example project"

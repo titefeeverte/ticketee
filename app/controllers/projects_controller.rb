@@ -1,7 +1,9 @@
 class ProjectsController < ApplicationController
 
+  before_action :get_project, :only => [:show,:edit,:update, :destroy]
+
   def index
-    # define the variable  to rspec the factory in projetc_factory.rb
+    # define the variable to rspec the factory in projetc_factory.rb
     @projects = Project.all
   end
 
@@ -21,13 +23,31 @@ class ProjectsController < ApplicationController
   end 
 end
 
-def show
-  @project = Project.new
+def show 
+  # byebug
+  a = 1
+
 end
 
 def edit
-  #@project = Project.find(params[:id])
-  @project = Project.find(project_params)
+end
+
+def update
+    if @project.update(project_params)
+      flash[:notice] = 'Project has been updated.'
+      redirect_to @project
+    else
+      flash[:alert] = "Project has not been updated."
+      render action: 'edit'
+    end
+end
+
+def destroy
+  @project = Project.find(params[:id])
+  @project.destroy
+  flash[:notice] = "Project has been destroyed."
+
+  redirect_to projects_path
 end
 
 private
@@ -35,5 +55,21 @@ private
 def project_params
   params.require(:project).permit(:name, :description)
 end
+
+=begin to resolve the rspec error:  1) ProjectsController displays an error for a missing project
+     Failure/Error: get :show, id: "not-here"
+     ActiveRecord::RecordNotFound:
+       Couldn't find Project with 'id'=not-here
+=end
+def get_project
+  @project = Project.find(params[:id])
+   rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The project you were looking" +
+                    " for could not be found."
+    redirect_to projects_path
+end
+
+
+
 
 end

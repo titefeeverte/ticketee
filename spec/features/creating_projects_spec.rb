@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature "CreatingProjects", :type => :feature do
+feature 'CreatingProjects', :type => :feature do
   #pending "add some scenarios (or delete) #{__FILE__}"
-  scenario "can create a project" do
+  scenario 'can create a project' do
   	
   	visit '/'
 
