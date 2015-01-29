@@ -20,7 +20,7 @@ class TicketsController < ApplicationController
 	 end
 
 	 def edit
-     end
+   end
 
      def update
    		 if @ticket.update(ticket_params)
