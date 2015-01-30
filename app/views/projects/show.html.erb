@@ -1,10 +1,11 @@
 <div id='project'>
 <% title(@project.name, "Projects") %>
 <h2><%= @project.name %></h2>
+<p> description: <%= @project.description %></p>
 </div>
 
 
-
+<h3>List of tickets</h3>
 <ul id='tickets'>
 	<% @project.tickets.each do |ticket| %>
 	<li>
@@ -14,13 +15,14 @@
 	<% end %>
 </ul>
 
-<%= link_to "New Ticket", new_project_ticket_path(@project) %><br/>
+
 
 
 
 
 
 <ul>
+<li><%= link_to "New Ticket", new_project_ticket_path(@project) %></li>
 <li><%= link_to "Edit Project", edit_project_path(@project) %></li>
 
 <li><%= link_to "Delete Project",
@@ -29,5 +31,4 @@ method: :delete,
 data: { confirm:
 	"Are you sure you want to delete this project?"
 } %></li>
-<li><%= link_to 'Home', projects_path %><br/></li>
 </ul>

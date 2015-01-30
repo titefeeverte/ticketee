@@ -10,8 +10,8 @@ feature "Creating Tickets" do
 	end
 
 	scenario "Creating a ticket" do 
-		fill_in "title", with: "Non-standards compliance"
-		fill_in "descritpion", with: "My pages are ugly!"
+		fill_in "ticket[title]", with: "Non-standards compliance"
+		fill_in "ticket[description]", with: "My pages are ugly!"
 		click_button "Create Ticket"
 		expect(page).to have_content("Ticket has been created. ")
 	end
@@ -25,8 +25,8 @@ feature "Creating Tickets" do
 	end
 	
 	scenario 'Description must be longer than 10 characters' do
-		fill_in 'title', with: 'Non-standards compliance'
-		fill_in 'description', with: 'it sucks'
+		fill_in 'ticket[title]', with: 'Non-standards compliance'
+		fill_in 'ticket[description]', with: 'it sucks'
 		click_button 'Create Ticket'
 
 		expect(page).to have_content('Ticket has not been created.')
