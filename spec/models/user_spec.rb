@@ -6,7 +6,6 @@ describe User do
 	describe "passwords" do
 		it "needs a password and confirmation to save" do
 			u = User.new(name: "steve")
-			debugger
 			u.save
 			expect(u).to_not be_valid
 			u.password = "password"
@@ -35,6 +34,6 @@ describe User do
 		end
 		it "does not authenticate with an incorrect password" do
 			expect(user.authenticate("hunter1")).to_not be
-		end 
+		end
 	end
 end

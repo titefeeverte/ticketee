@@ -8,7 +8,7 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
     </script>
     <![endif]-->
-     
+
 <!--Reference from Show's template-->
   <title><%= @title || "Get Ticketee" %></title>
 
@@ -23,16 +23,10 @@
   <body>
     <!--include an navigation-->
     <header class="navbar navbar-fixed-top navbar-inverse">
-
+      <%= render :partial => 'shared/navbar' %>
     </header>
 <nav>
-  <% if @user.new_record? %>
-     <%= f.submit "Sign up" %>
-  <% else %>
-     <%= f.submit "Edit Profile" %>
-  <% end %>
-<% end %>
-<%= link_to 'Home', projects_path %>
+      <%= render :partial => 'shared/signup' %>
 </nav>
     <div class="container">
 
