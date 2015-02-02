@@ -44,5 +44,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
+
+# Flexible authentication solution for Rails with Warden
+  gem 'devise'
 end
 
