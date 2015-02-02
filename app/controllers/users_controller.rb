@@ -10,6 +10,7 @@
 	#redirect elswhere rather than rener a page
 	def create
 	  @user = User.new(user_params)
+	  byebug
 	  if @user.save
 	    flash[:notice] = "You have signed up successfully."
 	    redirect_to projects_path

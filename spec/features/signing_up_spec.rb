@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-feature 'Signing up' do
-  scenario 'Successful sign up' do
+RSpec.feature "Users can sign up" do
+  scenario "when providing valid details" do
+
 
     visit '/'
 
