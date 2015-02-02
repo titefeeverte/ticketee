@@ -9,6 +9,9 @@
         <li class="<%= "active" if current_page?("/users/sign_up") %>">
   <%= link_to "Sign up", new_user_path %>
 </li>
+<li class="<%= "active" if current_page?("/users/sign_in") %>">
+  <%= link_to "sign in", new_user_path %>
+</li></li>
         <li><%= link_to 'Projects Menu', projects_path %></li>
 </ul>
 ￼  </div>
