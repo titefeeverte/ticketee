@@ -1,5 +1,6 @@
 Ticketee::Application.routes.draw do
   
+  devise_for :users
   root "projects#index"
   
   resources :projects do
@@ -7,7 +8,7 @@ Ticketee::Application.routes.draw do
      
   end
 resources :users
-# devise_for :users
+#devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
