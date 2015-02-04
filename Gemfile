@@ -45,6 +45,9 @@ group :development, :test do
   gem 'capybara'
   gem 'factory_girl_rails'
 
+  # bootstrap
+  gem 'bootstrap-sass', '~> 3.3.3'
+
 # Flexible authentication solution for Rails with Warden
   gem 'devise'
 end
