@@ -23,21 +23,54 @@
   <body>
     <!--include an navigation-->
     <header class="navbar navbar-fixed-top navbar-inverse">
-      <%= render :partial => 'shared/navbar' %>
+      <% if false %> <%= render :partial => 'shared/navbar' %> <% end%>
     </header>
-<nav>
+<div>
       <%= render :partial => 'shared/signup' %>
-</nav>
+</div>
+
+ <nav >
+      <span>
+    <%= link_to "Ticketee Accueil", root_path, class: "navbar-brand" %>
+  </span>
+      
+    <% if user_signed_in? %>
+     <ul class="nav navbar-nav">
+         <li class="navbar-text">
+           Signed in as <%= current_user.email %>
+         </li>
+         <li class="<%= "active" if current_page?("/") %>">
+              <%= link_to "Home", root_path %>
+        </li> 
+       <li><%= link_to 'Projects Menu', projects_path %></li>
+
+       <% unless user_signed_in? %>
+      <li class="<%= "active" if current_page?("/users/sign_up") %>">
+        <%= link_to "Sign up", new_user_registration_path %>
+      </li>
+     
+      <li class="<%= "active" if current_page?("/users/sign_in") %>">
+        <%= link_to "sign_in", new_user_session_path %>
+      </li>
+      <% end %>
+  
+    </ul>
+<% end %>
+  </nav>
+
+
     <div class="container">
 
         <%= yield %>
 
-        <!--flash message -->
+        <!-- Flash Message place-->
         <% flash.each do |key, value| %>
         <div class='flash' id='<%= key %>'>
           <%= value %>
-        </div>
+        </div> 
         <% end %>
+        <!--Flash end -->
+
 
       </div>
 

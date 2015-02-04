@@ -1,6 +1,7 @@
 	class UsersController < ApplicationController
 	  
 	  before_action :get_user, :only => [:show, :edit, :update ]
+	 
 
 	  #to set a new @user
 	  def new
@@ -13,7 +14,9 @@
 	   if @user.save
 	    flash[:notice] = "You have signed up successfully."
 	    redirect_to projects_path
-	  else
+	  else 
+	  	flash[:notice] = "user not created"
+
 	    render :new
 	  end 
 	end
@@ -40,10 +43,9 @@
 			params.require(:user).permit(:name, :email, :password, :password_confirmation)
 		end
 
-	
+		def get_user
+	 		@user = User.find(params[:id])	
+		end
 
-	def get_user
-	 @user = User.find(params[:id])	
-	end
 
 end
