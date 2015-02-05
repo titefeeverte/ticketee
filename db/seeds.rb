@@ -11,3 +11,17 @@
 # ticket1 = project.Ticket.new({title: 'Ticket 1' description: 'cest un ticket 1'})
 # ticket2 = project.Ticket.new({title: 'Ticket 2' description: 'cest un ticket 2'})
 # ticket3 = project.Ticket.new({title: 'Ticket 3' description: 'cest un ticket 3'})
+
+
+projectdata = ["Project", "c'est un projet"]
+ticketdata  = ["Ticket", "Ceci est un ticket"]
+
+(1..3).each do | index|
+  projet = Project.create( :name =>  "#{projectdata[0]} #{index}", :description => projectdata[1] )
+  (1..3).each do |ticket|
+  	projet.tickets.create( :title => "#{ticketdata[0]} #{index}", :description => ticketdata[1])
+	end
+end
+
+
+
