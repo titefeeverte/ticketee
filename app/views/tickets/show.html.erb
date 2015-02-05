@@ -1,6 +1,9 @@
 <div id='ticket'>
 	<h2><%= @ticket.title %></h2>
 	<p>description: <%= simple_format(@ticket.description) %></p>
+	<p id="author">
+   Created by <%= @ticket.author.email %>, <%= time_ago_in_words(@ticket.created_at) %> ago
+</p>
 </div>
 
 

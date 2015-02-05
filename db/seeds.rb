@@ -16,9 +16,9 @@
 projectdata = ["Project", "c'est un projet"]
 ticketdata  = ["Ticket", "Ceci est un ticket"]
 
-(1..3).each do | index|
-  projet = Project.create( :name =>  "#{projectdata[0]} #{index}", :description => projectdata[1] )
-  (1..3).each do |ticket|
+(1..4).each do | index|
+  projet = Project.create( :name =>  "#{projectdata[0]} #{index}", :description => "#{projectdata[1]} #{index}")
+  (1..4).each do |ticket|
   	projet.tickets.create( :title => "#{ticketdata[0]} #{index}", :description => ticketdata[1])
 	end
 end
