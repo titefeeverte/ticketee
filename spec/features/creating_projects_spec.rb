@@ -1,4 +1,6 @@
 require 'rails_helper'
+before do
+  sign_in_as!(FactoryGirl.create(:admin_user))
 
 feature 'CreatingProjects', :type => :feature do
   #pending "add some scenarios (or delete) #{__FILE__}"
@@ -14,5 +16,6 @@ feature 'CreatingProjects', :type => :feature do
   	fill_in 'project[description]' , with: 'A text-editor for OS X'
   	click_button('Create')
   	expect(page).to have_content('Project has been created.')
+    end
   end
 end

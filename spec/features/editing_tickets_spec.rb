@@ -1,6 +1,7 @@
 require 'spec_helper'
 feature "Editing tickets" do
   let!(:project) { FactoryGirl.create(:project) }
+  let(:user) {FactoryGirl.create(:user)}
   let!(:ticket) { FactoryGirl.create(:ticket, project: project) }
   before do
     visit '/'
