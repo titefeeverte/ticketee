@@ -12,10 +12,10 @@
 	def create
 	  @user = User.new(user_params)
 	   if @user.save
-	    flash[:notice] = "You have signed up successfully."
+	    flash.keep[:notice] = "Welcome! You have signed up successfully."
 	    redirect_to projects_path
 	  else 
-	  	flash[:notice] = "user not created"
+	  	flash.keep[:notice] = "user not created"
 
 	    render :new
 	  end 
@@ -30,10 +30,10 @@
 
 	  def update
 	  	if @user.update(user_params)
-	  		flash[:notice] = 'Profile has been updated.'
+	  		flash.keep[:notice] = 'Profile has been updated.'
 	  		redirect_to projects_path
 	  	else
-	  		flash[:alert] = "Profile has not been updated."
+	  		flash.keep[:alert] = "Profile has not been updated."
 	  		render action: 'edit'
 	  	end
 	  end
