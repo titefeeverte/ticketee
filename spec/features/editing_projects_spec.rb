@@ -1,5 +1,10 @@
 require 'rails_helper'
 feature 'Editing Projects' do
+
+	before do
+  		sign_in_as!(FactoryGirl.create(:admin_user))
+  	end
+  	
   scenario 'Updating a project' do
     FactoryGirl.create(:project, name: 'TextMate 2')
     visit '/'

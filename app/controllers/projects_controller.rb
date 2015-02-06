@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
 
+  before_action :authorize_admin!, except: [:index, :show]
   before_action :get_project, :only => [:show,:edit,:update, :destroy]
 
   def index
@@ -74,7 +75,8 @@ end
     unless current_user.admin?
       flash[:alert] = "You must be an admin to do that."
       redirect_to root_path
-end
+    end
+end 
 
 
 end
