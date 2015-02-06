@@ -16,6 +16,8 @@ module AuthHelpers
   def sign_in(user)
     session[:user_id] = user.id
   end
+  method_alias :login_as
+
 end
 
 RSpec.configure do |c|

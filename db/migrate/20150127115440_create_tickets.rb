@@ -3,7 +3,6 @@ class CreateTickets < ActiveRecord::Migration
     create_table :tickets do |t|
       t.string :title
       t.text :description
-      t.string :∖
       t.references :project, index: true
 
       t.timestamps null: false
