@@ -55,7 +55,7 @@ RSpec.configure do |config|
   # Login_as Method config
    config.include Warden::Test::Helpers, type: :feature
 
-  #Include method
+  #Include reset method
   config.after(type: :feature) { Warden.test_reset! }
 
 

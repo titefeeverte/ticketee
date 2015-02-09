@@ -12,7 +12,7 @@
 	def create
 	  @user = User.new(user_params)
 	   if @user.save
-	    flash.keep[:notice] = "Welcome! You have signed up successfully."
+	    flash.keep[:notice] = "Welcome! You have signed up successfully (userController)."
 	    redirect_to projects_path
 	  else 
 	  	flash.keep[:notice] = "user not created"

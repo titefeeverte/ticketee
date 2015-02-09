@@ -10,7 +10,7 @@
       </ul>
  </div>
  <% end %>
-
+<p>C'est le formulaire User</p>
  <p>
     <%= f.label :name, "Username" %><br>
     <%= f.text_field :name %>
@@ -30,6 +30,7 @@
     <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation %>
 </p>
+
 
   <% if @user.new_record? %>
     <%= f.submit "Sign up" %>

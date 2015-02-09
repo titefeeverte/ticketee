@@ -2,7 +2,8 @@ require "rails_helper"
 RSpec.feature "A signed in user can sign out" do
   let!(:user) { FactoryGirl.create(:user) }
   before do
-    sign_in_as(user)
+    #sign_in_as(user)
+	login_as(user)
   end
   scenario do
     visit "/"
