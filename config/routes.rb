@@ -1,7 +1,7 @@
 Ticketee::Application.routes.draw do
   
-  devise_for :users
-  #, controllers: { sessions: "users/sessions" }
+
+  devise_for :users, controllers: { sessions: "users/sessions" }
  
   root "projects#index"
   
@@ -10,8 +10,9 @@ Ticketee::Application.routes.draw do
      
   end
 
-
- resources :users
+# No Resources users parce qu'il ne faut plus de UsersController, Devise s'en charge
+#resources :users
+ 
 
 
   # The priority is based upon order of creation: first created -> highest priority.
