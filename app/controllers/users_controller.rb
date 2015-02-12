@@ -37,6 +37,7 @@
 	  		render action: 'edit'
 	  	end
 	  end
+ 
 
 	private
 		def user_params
@@ -46,6 +47,5 @@
 		def get_user
 	 		@user = User.find(params[:id])	
 		end
-
 
 end
